@@ -31,21 +31,28 @@ def ekinminALICE(gch):
 # -----------------------------------------------------------------------------
 def main():
   # get access to the data
+#  cases = [
+#    ["spinzero", "Drell-Yan, "+r'$\beta$-independent | spin: 0', "spinzero_eff.pdf"],
+#    ["spinhalf", "Drell-Yan, "+r'$\beta$-independent | spin: 1/2', "spinhalf_eff.pdf"],
+#    ["spinone", "Drell-Yan, "+r'$\beta$-independent | spin: 1', "spinone_eff.pdf"],
+#    ["spinzero_beta", "Drell-Yan, "+r'$\beta$-dependent | spin: 0', "spinzero_beta_eff.pdf"],
+#    ["spinhalf_beta", "Drell-Yan, "+r'$\beta$-dependent | spin: 1/2', "spinhalf_beta_eff.pdf"],
+#    ["spinone_beta", "Drell-Yan, "+r'$\beta$-dependent | spin: 1', "spinone_beta_eff.pdf"],
+#    ["PF_spinzero", "Photon Fusion, "+r'$\beta$-independent | spin: 0', "PF_spinzero_eff.pdf"],
+#    ["PF_spinhalf", "Photon Fusion, "+r'$\beta$-independent | spin: 1/2', "PF_spinhalf_eff.pdf"],
+#    ["PF_spinone", "Photon Fusion, "+r'$\beta$-independent | spin: 1', "PF_spinone_eff.pdf"],
+#    ["PF_spinzero_beta", "Photon Fusion, "+r'$\beta$-dependent | spin: 0', "PF_spinzero_beta_eff.pdf"],
+#    ["PF_spinhalf_beta", "Photon Fusion, "+r'$\beta$-dependent | spin: 1/2', "PF_spinhalf_beta_eff.pdf"],
+#    ["PF_spinone_beta", "Photon Fusion, "+r'$\beta$-dependent | spin: 1', "PF_spinone_beta_eff.pdf"] ]
   cases = [
     ["spinzero", "Drell-Yan, "+r'$\beta$-independent | spin: 0', "spinzero_eff.pdf"],
     ["spinhalf", "Drell-Yan, "+r'$\beta$-independent | spin: 1/2', "spinhalf_eff.pdf"],
     ["spinone", "Drell-Yan, "+r'$\beta$-independent | spin: 1', "spinone_eff.pdf"],
-    ["spinzero_beta", "Drell-Yan, "+r'$\beta$-dependent | spin: 0', "spinzero_beta_eff.pdf"],
-    ["spinhalf_beta", "Drell-Yan, "+r'$\beta$-dependent | spin: 1/2', "spinhalf_beta_eff.pdf"],
-    ["spinone_beta", "Drell-Yan, "+r'$\beta$-dependent | spin: 1', "spinone_beta_eff.pdf"],
     ["PF_spinzero", "Photon Fusion, "+r'$\beta$-independent | spin: 0', "PF_spinzero_eff.pdf"],
     ["PF_spinhalf", "Photon Fusion, "+r'$\beta$-independent | spin: 1/2', "PF_spinhalf_eff.pdf"],
-    ["PF_spinone", "Photon Fusion, "+r'$\beta$-independent | spin: 1', "PF_spinone_eff.pdf"],
-    ["PF_spinzero_beta", "Photon Fusion, "+r'$\beta$-dependent | spin: 0', "PF_spinzero_beta_eff.pdf"],
-    ["PF_spinhalf_beta", "Photon Fusion, "+r'$\beta$-dependent | spin: 1/2', "PF_spinhalf_beta_eff.pdf"],
-    ["PF_spinone_beta", "Photon Fusion, "+r'$\beta$-dependent | spin: 1', "PF_spinone_beta_eff.pdf"] ]
+    ["PF_spinone", "Photon Fusion, "+r'$\beta$-independent | spin: 1', "PF_spinone_eff.pdf"] ]
 
-  nruns = 77
+  nruns = 70
   runs = [None]*nruns
   for r in list(range(0, nruns)):
     runs[r] = f"{r+1:02}"

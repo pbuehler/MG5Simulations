@@ -4,7 +4,7 @@ set run_card ebeam1 6500
 set ebeam2 6500
 set lpp1 1
 set lpp2 1
-set pdlabel lhapdf
+set pdlabel nn23lo1
 set lhaid 230000
 set nevents 10000
 set dynamical_scale_choice -1

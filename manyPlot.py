@@ -43,25 +43,25 @@ def main(title, cases, pdfname):
   
   # initialize plots
   fig1, ax1 = plt.subplots()
-  ax1.set_title(ttxt)
+  ax1.set_title(title)
   ax1.set_xlabel("kinetic energy")
   ax1.set_yscale("log")
   ax1.set_xlim([0., 4000.])
   
   fig2, ax2 = plt.subplots()
-  ax2.set_title(ttxt)
+  ax2.set_title(title)
   ax2.set_xlabel("eta")
   ax2.set_yscale("log")
   ax2.set_xlim([-5., 5.])
 
   fig3, ax3 = plt.subplots()
-  ax3.set_title(ttxt)
+  ax3.set_title(title)
   ax3.set_xlabel("pt")
   ax3.set_yscale("log")
   ax3.set_xlim([0., 4000.])
 
   fig4, ax4 = plt.subplots()
-  ax4.set_title(ttxt)
+  ax4.set_title(title)
   ax4.set_xlabel("beta")
   ax4.set_yscale("log")
   ax4.set_xlim([0., 1.])
@@ -141,12 +141,12 @@ def main(title, cases, pdfname):
 # -----------------------------------------------------------------------------
 if __name__ == "__main__":
 
-  ttxt = "Photon Fusion, "+r'$\beta$-dependent'
+  title = "Photon Fusion, "+r'$\beta$-independent'
   cases = [
-    ["PF_spinzero_beta", "15", "spin 0, m=1500, 1gD"],
-    ["PF_spinhalf_beta", "15", "spin 1/2, m=1500, 1gD"],
-    ["PF_spinone_beta",  "15", "spin 1, m=1500, 1gD"] ]
-  pdfname = "PF_1_1500_beta.pdf"
+    ["PF_spinzero", "15", "spin 0, m=1000, 1gD"],
+    ["PF_spinhalf", "15", "spin 1/2, m=1000, 1gD"],
+    ["PF_spinone",  "15", "spin 1, m=1000, 1gD"] ]
+  pdfname = "PF_1_1000_beta.pdf"
     
   main(title, cases, pdfname)
 
