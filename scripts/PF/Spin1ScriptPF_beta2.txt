@@ -10,6 +10,6 @@ set nevents 10000
 set dynamical_scale_choice -1
 set fixed_couplings False
 set param_card mass 25 125
-set mass 4110000 7000
+set mass 4110000 3000
 set decay 4110000 0.000000e+0
 set gch 1 7.0

@@ -10,8 +10,8 @@
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 # some definitions
-mgpath=/home/pbuehler/physics/projects/alice/Monopoles/MadGraph/MG5_aMC_v3_1_0
-tpath=/home/pbuehler/physics/projects/alice/Monopoles/MadGraph/testing
+mgpath=/home/pbuehler/physics/projects/alice/Monopoles/MadGraph/MG5_aMC_v3_1_1
+tpath=/home/pbuehler/physics/projects/alice/Monopoles/MadGraph/MG5Simulations
 
 # run MadGraph
 cd $tpath
@@ -22,9 +22,10 @@ spath=$tpath/scripts/DY
 # number of events
 nev=10000
 # models
-snames=( Spin0ScriptDY Spin12ScriptDY Spin1ScriptDY Spin0ScriptDY_beta Spin12ScriptDY_beta Spin1ScriptDY_beta )
+#snames=( Spin0ScriptDY Spin12ScriptDY Spin1ScriptDY Spin0ScriptDY_beta Spin12ScriptDY_beta Spin1ScriptDY_beta )
+snames=(Spin0ScriptDY_beta Spin12ScriptDY_beta Spin1ScriptDY_beta )
 # masses
-masses=( 100 250 1000 1500 2000 2500 3000 4000 5000 6000 7000)
+masses=( 100 250 1000 1500 2000 2500 3000 4000 5000 6000)
 # magnetic charges
 mcharges=( 1.0 2.0 3.0 4.0 5.0 6.0 7.0 )
 
@@ -34,7 +35,7 @@ for sname in ${snames[@]}; do
 
   # replace maxparticles.inc on line 5 by full path
   rpath=$(echo `grep output $spath/${sname}.txt` | awk '{print $2}')
-  sed -i "/include 'maxparticles.inc'/c\      include '/home/pbuehler/physics/projects/alice/Monopoles/MadGraph/testing/${rpath}/Source/maxparticles.inc'" ${rpath}/Source/genps.inc
+  sed -i "/include 'maxparticles.inc'/c\      include '$tpath/${rpath}/Source/maxparticles.inc'" ${rpath}/Source/genps.inc
 
   # loop over masses
   for m in ${masses[@]}; do
@@ -54,9 +55,10 @@ spath=$tpath/scripts/PF
 # number of events
 nev=10000
 # models
-snames=( Spin0Script Spin12Script Spin1Script Spin0Script_beta Spin12Script_beta Spin1Script_beta )
+#snames=( Spin0ScriptPF Spin12ScriptPF Spin1ScriptPF Spin0ScriptPF_beta Spin12ScriptPF_beta Spin1ScriptPF_beta )
+snames=( Spin0ScriptPF_beta Spin12ScriptPF_beta Spin1ScriptPF_beta )
 # masses
-masses=( 100 250 1000 1500 2000 2500 3000 4000 5000 6000 7000)
+masses=( 100 250 1000 1500 2000 2500 3000 4000 5000 6000)
 # magnetic charges
 mcharges=( 1.0 2.0 3.0 4.0 5.0 6.0 7.0 )
 
@@ -66,7 +68,7 @@ for sname in ${snames[@]}; do
 
   # replace maxparticles.inc on line 5 by full path
   rpath=$(echo `grep output $spath/${sname}.txt` | awk '{print $2}')
-  sed -i "/include 'maxparticles.inc'/c\      include '/home/pbuehler/physics/projects/alice/Monopoles/MadGraph/testing/${rpath}/Source/maxparticles.inc'" ${rpath}/Source/genps.inc
+  sed -i "/include 'maxparticles.inc'/c\      include '$tpath/${rpath}/Source/maxparticles.inc'" ${rpath}/Source/genps.inc
 
   # loop over masses
   for m in ${masses[@]}; do
